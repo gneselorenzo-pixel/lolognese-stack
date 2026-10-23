@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Luna Llena, Línea · luna grande tras Machu Picchu">
+  <title>Luna Llena, Línea · luna grande tras Machu Picchu</title>
+  <defs><mask id="iddm"><rect width="200" height="200" fill="#fff"/><path d="M6 158L34 126L58 112L84 116L106 90L120 62L134 32L148 48L158 74L168 102L194 158Z" fill="#000" stroke="#000" stroke-width="12" stroke-linejoin="round"/></mask></defs>
+  <g fill="none" stroke="#FF7A00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,16)">
+    <circle cx="72" cy="66" r="58" mask="url(#iddm)"/>
+    <path d="M6 158L34 126L58 112L84 116L106 90L120 62L134 32L148 48L158 74L168 102L194 158"/>
+  </g>
+</svg>

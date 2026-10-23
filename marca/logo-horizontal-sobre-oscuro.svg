@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 120" role="img" aria-label="Luna Llena, Línea · luna grande tras Machu Picchu">
+  <title>Luna Llena, Línea · luna grande tras Machu Picchu</title><style>@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&amp;family=Inter:wght@600&amp;display=swap');.n{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;letter-spacing:-0.03em}.t{font-family:Inter,system-ui,sans-serif;font-weight:600;letter-spacing:0.14em}</style><g transform="translate(0,10) scale(0.5)">
+  <defs><mask id="Lddm"><rect width="200" height="200" fill="#fff"/><path d="M6 158L34 126L58 112L84 116L106 90L120 62L134 32L148 48L158 74L168 102L194 158Z" fill="#000" stroke="#000" stroke-width="12" stroke-linejoin="round"/></mask></defs>
+  <g fill="none" stroke="#FF7A00" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,16)">
+    <circle cx="72" cy="66" r="58" mask="url(#Lddm)"/>
+    <path d="M6 158L34 126L58 112L84 116L106 90L120 62L134 32L148 48L158 74L168 102L194 158"/>
+  </g></g>
+  <text class="n" x="116" y="68" font-size="54" fill="#FFFFFF">Luna Llena</text>
+  <text class="t" x="118" y="96" font-size="15" fill="#FF7A00">AGENCIA DE VIAJES · PERÚ</text>
+</svg>
