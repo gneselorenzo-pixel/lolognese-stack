@@ -1,116 +1,232 @@
-# Luna Llena Travel: rediseño completo del sitio web
+# Luna Llena Travel: sitio nuevo con venta online
 
-Luna Llena Travel es una agencia de viajes con base en Cusco, Perú. Su sitio actual, https://lunallenatravel.com, es un WordPress con Elementor y el theme "Travel" de nicdark, y está roto. Hay que **rehacerlo de cero como sitio estático** en este repo. No se migra nada de WordPress, salvo el contenido.
+Luna Llena Travel (razón social Full Moon Travel Agency E.I.R.L.) es una agencia y operador local con base en San Blas, Cusco. Hoy su sitio, https://lunallenatravel.com, es un WordPress roto. Hay que construir **un sitio nuevo, multipágina y que venda**: el viajero reserva un paquete pagando una seña online, y "cotizar" queda como alternativa.
 
-Trabaja sin pedirme confirmaciones: las decisiones de abajo ya están tomadas. Si algo no está definido, elige lo más sensato, sigue adelante y anótalo en `DECISIONES.md`. Al final, deja todo commiteado en una rama y abre un PR con capturas (mobile 375px y desktop 1440px) del home, una categoría y un paquete.
+Ya existe una maqueta anterior, un artifact de una sola página. Sirve de **referencia visual** y nada más. Este brief la reemplaza: donde la maqueta y el brief no coincidan, manda el brief.
 
-## Qué está mal hoy (para no repetirlo)
+Trabaja sin pedirme confirmaciones. Las decisiones de abajo ya están tomadas con el dueño. Lo que no esté definido lo eliges tú, eligiendo lo más sensato, y lo anotas en `DECISIONES.md`. Al terminar, deja todo en una rama con un PR que incluya capturas (375px y 1440px) del home, una categoría, un paquete y los 3 pasos de compra, más la evidencia de una compra de prueba de punta a punta.
 
-- **Menú laberinto:** el menú carga unos 80 paquetes en 7 grupos y se repite entero en mobile.
-- **Botones y links rotos:**
-  - "Contactanos" apunta a `https:/lunallenatravel.com/contactanos` (con una sola barra).
-  - Varios "CONTACTANOS" y "MÁS INFORMACIÓN" llevan a `#`.
-  - Hay tarjetas que llevan a `/destinations/california/` y `/destinations/italy/`.
-  - El footer está lleno de links de la demo del theme (travel.nicdark.com, "All Demos", "Airport Shuttle 37 $/h", "Kayak Tour").
-- **Contenido falso:** los testimonios de "Nosotros" son de la demo del theme (Heidi de New York, Ben & Judy de Miami, Jasper de San Francisco). **No los uses.**
-- **Slugs reciclados:** el slug no coincide con el paquete. Por ejemplo, `camino-inka-extremo-5d-4n` contiene "2D-1N Salineras de Maras Moray + Machupicchu", `mapi-5d-4n-salkantay-to-machupicchu` contiene "Machupicchu y Montaña Huayna Picchu" y `mapi-3d-2n-lares-trek` contiene "Valle Sagrado + Short Inka Trail 2D/1N". Manda el contenido de la página, no el slug.
-- **Itinerarios ilegibles:** son un bloque de texto en MAYÚSCULAS, sin fotos ni estructura, con errores ("el tercer día" dentro del día 2, "PERZONALIZADO").
-- **Mezcla de idiomas:** etiquetas en inglés ("Durations", "Difficulty", "From", "Details"), H1 repetidos y un selector de 4 idiomas.
+---
 
-## Decisiones tomadas
+## 1. Stack y despliegue
 
-1. **Stack:** **Astro** estático, con content collections. Cada paquete es **un archivo de datos** (`src/content/paquetes/<slug>.json` o `.md` con frontmatter), validado con un schema Zod. Nada de CMS ni panel: los cambios se hacen editando esos archivos. CSS propio con tokens, sin Tailwind (o con Tailwind, si lo prefieres, pero con tokens de marca). Prácticamente sin JS: solo islas chicas donde haga falta (menú mobile, galería, filtros). Tiene que compilar para **Cloudflare Pages** (`npm run build` → `dist/`). El deploy lo hago yo después, así que no lo intentes.
-2. **Idioma:** **solo español neutro con "tú"** ("planeas", "quieres", "cuéntanos"; nada de voseo rioplatense como "elegí" o "querés"). No hay selector de idiomas. Deja los textos de interfaz en un archivo aparte (`src/i18n/es.ts`), así sumar inglés más adelante no implica rehacer nada.
-3. **Catálogo:** se migran **los 80 paquetes**, pero se muestran en **5 categorías**, no como lista:
-   - **Machu Picchu:** las variantes que solo cambian el tren (Expeditions, Local/peruanos, Vistadome/Observatory, Hiram Bingham) o el acceso (tren o Hidroeléctrica) pasan a ser **opciones dentro de un mismo paquete**, con su diferencia de precio y horario. Unos 15 paquetes deberían quedar en unos 6.
-   - **Tours en Cusco:** los full days (Valle Sagrado, Montaña de Colores, Humantay, City Tour, Valle Sur, termas, Queswachaca, clases de cocina, etc.).
-   - **Trekking:** Salkantay, Choquequirao, Ollantaytambo (Cachiccata, Moon Stone), Lares, Huchuy Qosqo, Ausangate e Inka Jungle.
-   - **Viajes completos:** los multi-día de 4D/3N a 12D/11N (Cusco Tradicional, Intrépido, Ruta del Sol, Perú Profundo, Perú 360°, etc.).
-   - **Retiros:** ayahuasca, San Pedro/wachuma, kambo, baños de florecimiento, pago a la Pachamama, Espíritu Vivencial, Exploración Espiritual. Van con un tono sobrio y respetuoso, sin promesas de sanación ni claims médicos, y con una nota de que requieren entrevista previa.
-   - El paquete "Perú Mágico + Salar de Uyuni" incluye Bolivia: márcalo como tal en el texto, no lo vendas como Perú.
-4. **Conversión:** no hay reserva ni pago online.
-   - **CTA principal en todo el sitio: "Cotiza este viaje".** Lleva a `https://luna-llena-viaje.pages.dev/paquetes?paquete=<slug>&origen=web` (el formulario ya existe en producción y guarda el lead en el CRM; los params desconocidos quedan registrados). En el home y en las páginas genéricas, el CTA va a `https://luna-llena-viaje.pages.dev/` (viaje a medida).
-   - **CTA secundario: WhatsApp,** con un mensaje prellenado ("Hola, me interesa <paquete>"). El número vive en **una** constante en `src/config.ts` (`WHATSAPP_NUMERO`), que **queda vacía**. Si está vacía, todos los botones de WhatsApp se ocultan. No inventes un número.
-   - **Ningún botón ni link puede quedar en `#` o roto.** Antes del PR, agrega un chequeo (script o test) que recorra `dist/` y falle si hay un `href="#"` o un link interno que no resuelve.
+- **Astro** (salida estática) + **Cloudflare Pages Functions** para todo lo que necesite servidor (`functions/api/*`). Sin frameworks de UI pesados: islas chicas en JS vanilla o Preact, solo donde haga falta.
+- Los **paquetes son datos**: un archivo por paquete en `src/content/paquetes/<slug>.json`, validado con un schema Zod. Nada de CMS: se editan esos archivos.
+- **Base de datos:** la D1 del CRM que ya existe. Binding `DB` → `crm-plantilla`, con `database_id = "3bc152cd-ac4c-4043-baf7-9c84b68fa945"` en `wrangler.toml`. Es la misma base que usan el CRM y el formulario `luna-llena-viaje`, y **tiene datos reales**:
+  - Solo se permiten migraciones aditivas (`CREATE TABLE IF NOT EXISTS`, `ALTER TABLE … ADD COLUMN`), que van en `migrations/`.
+  - **No las apliques en remoto.** Las aplico yo.
+  - Para las pruebas locales usa `wrangler pages dev` con D1 local.
+- El proyecto de Pages se va a llamar `luna-llena-web` (`luna-llena-web.pages.dev`), y el dominio `lunallenatravel.com` se conecta después. **No hagas el deploy**: lo hago yo.
+- Las variables de entorno van documentadas en `.dev.vars.example`, nunca con valores reales: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_ENV` (`sandbox` / `live`), `RESEND_API_KEY`, `AVISO_EMAIL`, `SITE_URL`.
 
-## Marca
+## 2. Idioma y tono
 
+- Todo en **español neutro con "tú"**: "planeas", "quieres", "cuéntanos", "reserva". **Nada de voseo** ("elegí", "querés", "reservá") y nada de modismos rioplatenses.
+- Un solo idioma, sin selector. Los textos de interfaz van en `src/i18n/es.ts`, así sumar inglés más adelante no implica rehacer nada.
+- Al migrar los itinerarios del sitio viejo, pásalos de MAYÚSCULAS a tipo oración y corrige ortografía y errores de día (en el sitio viejo hay un "el tercer día" dentro del día 2), **sin cambiar datos duros**: horarios, qué incluye.
+
+## 3. Marca y sistema visual
+
+- **Tipografías:** **Fraunces** para los títulos (Google Fonts, variable, eje `opsz`, pesos 500–600, `letter-spacing` entre -0.01 y -0.02em, **sin** condensar ni apretar de más) e **Inter** para el texto y la interfaz (400/500/600). Ambas con `display=swap`, y precarga solo de los pesos del hero.
+- **Paleta:** el **blanco domina** y el naranja **`#FF7A00`** es el color de marca, con tinta `#161616` para texto y trazos.
+  - Agrega tokens derivados con nombre semántico en `:root`: `--color-brand`, `--color-brand-press`, `--color-brand-ink` (un naranja oscuro para texto, AA sobre blanco), `--color-sand` (un crema muy claro para fondos alternos), `--color-line` y `--color-muted`.
+  - **Cero hex sueltos** en los componentes.
+  - Sobre el naranja, el texto va en tinta `#161616`, nunca blanco chico.
+- **Botones y chips rectos, con radio de 4–6px.** **Prohibido `border-radius: 999px`** en botones, chips, badges o etiquetas: al dueño, los botones píldora redondos y coloridos le parecen "baratos". Los únicos círculos permitidos son los elementos gráficos del logo (el sol).
+- **Íconos:** Lucide o SVG propios, con trazo de 1.5–2px. Nada de emojis.
 - **Logos** en `marca/`:
-  - `logo-horizontal-sobre-claro.svg` va en el header (fondo blanco).
-  - `logo-horizontal-sobre-oscuro.svg` va en el footer o sobre fotos.
-  - `icono-app.svg` / `.png` (cuadrado naranja con luna blanca y la línea de la montaña en tinta) sirve de favicon, apple-touch-icon e imagen OG base.
-  - Los SVG horizontales importan la fuente con `@import`: pásalos a `<img>` o inlinéalos sin depender de ese import.
-- **Paleta:** el **blanco domina** y el **naranja `#FF7A00`** es el color de marca. La tinta `#161616` va en el texto y en el trazo del logo. Define tokens semánticos en `:root` (`--color-bg`, `--color-text`, `--color-brand`, `--color-brand-ink`, `--color-line`, `--color-muted`) y no uses hex sueltos en los componentes.
-  - **Contraste:** el texto blanco sobre `#FF7A00` no llega a AA en tamaño chico. Los botones naranjas llevan texto `#161616`, o se usa un naranja más oscuro solo para el texto.
-- **Tipografías:** **Bricolage Grotesque** (títulos, peso 700–800) + **Inter** (texto), las dos de Google Fonts con `display=swap`.
-- **Estilo:** limpio, editorial, con mucha foto grande y mucho aire. **Prohibido:** botones píldora redondos y coloridos (al dueño le parecen "baratos"); los botones van rectos o con un radio chico (4–8px). Tampoco emojis como íconos (usa Lucide o SVG propios), ni gradientes de relleno.
+  - `logo-horizontal-sobre-claro.svg` va en el header.
+  - `logo-horizontal-sobre-oscuro.svg` va en el footer.
+  - `icono-app.svg`/`.png` sirve de favicon, apple-touch-icon y base de la imagen OG.
+  - Los SVG horizontales importan Bricolage por `@import`: conviértelos a trazos o inlinéalos sin depender de ese import.
+- **De la maqueta anterior, conserva:**
+  - El hero con la foto de Machu Picchu **recortada dentro del sol del logo** y la línea de montaña dibujándose.
+  - Los sellos de autoridad.
+  - La idea del **perfil de altura** del viaje.
+- **De la maqueta anterior, descarta:**
+  - Bricolage condensada.
+  - Las píldoras.
+  - Todo en una sola página.
+  - Los paquetes en modal.
+  - El formulario que solo abre WhatsApp.
 
-## Arquitectura de páginas
+## 4. Mapa del sitio
 
-- `/`: home.
-- `/machu-picchu`, `/tours-cusco`, `/trekking`, `/viajes-completos`, `/retiros`: una página por categoría, con grilla de tarjetas y filtros livianos (duración, dificultad).
-- `/paquetes/<slug>`: un paquete. Los slugs se rehacen limpios y descriptivos según el contenido real. Además, genera `_redirects` de Cloudflare desde **cada** URL vieja `/packages/<slug-viejo>/` a la nueva (301), así no se pierde SEO.
-- `/nosotros`, `/contacto`, `/preguntas-frecuentes`.
-- `/blog` y `/blog/<slug>`: migra los posts que existen (ruta gastronómica del Valle Sagrado, el Tumi, el Inti Raymi, Año Nuevo Andino, el ceviche, y los demás que encuentres en `/category/travel-blog/`).
-- 404 propia, con links a las 5 categorías.
+| Ruta | Qué es |
+|---|---|
+| `/` | Home corto (ver §5) |
+| `/viajes-completos` | Paquetes multi-día, de 4D/3N a 12D/11N |
+| `/machu-picchu` | Full days y 2D/1N a Machu Picchu |
+| `/tours-cusco` | Tours de un día en Cusco y el Valle |
+| `/trekking` | Salkantay, Choquequirao, Ollantaytambo, Lares, Huchuy Qosqo, Ausangate, Inka Jungle |
+| `/retiros` | Retiros y ceremonias |
+| `/paquete/<slug>` | Una página por paquete (ver §6) |
+| `/reservar/<slug>` | Compra en 3 pasos (ver §7) |
+| `/reserva/<id>` | Confirmación + estado de la reserva |
+| `/reserva/<id>/viajeros?t=<token>` | Formulario de pasaportes post-pago |
+| `/nosotros` | Autoridad completa (ver §5.2) |
+| `/contacto` | Datos + link al cotizador |
+| `/blog`, `/blog/<slug>` | Posts migrados del blog viejo |
+| `/terminos`, `/politica-de-cancelacion`, `/privacidad` | Legales |
+| `/libro-de-reclamaciones` | **Libro de Reclamaciones virtual**, obligatorio en Perú para quien vende online: un formulario que guarda en D1 y avisa por mail |
 
-**Navegación:** el header es sticky y lleva logo, las 5 categorías, Nosotros y el botón "Cotiza tu viaje". En mobile hay un menú a pantalla completa con las 5 categorías, nada de listas de 80 ítems. El footer tiene categorías, contacto, redes (placeholders vacíos que se ocultan) y aviso legal. Agrega breadcrumbs en las categorías y en los paquetes.
+- **Header sticky:** logo, las 5 categorías, Nosotros y un botón "Reservar" que lleva a `/viajes-completos`.
+- **Mobile:** menú a pantalla completa con las 5 categorías. **Nunca listas largas de paquetes en el menú.**
+- **Breadcrumbs** en las categorías y en los paquetes.
+- **Footer:** categorías, contacto, legales, Libro de Reclamaciones y sellos.
+- **Redirects:** genera `public/_redirects` con un 301 desde **cada** URL vieja `/packages/<slug-viejo>/` a su paquete nuevo. Ojo: en el sitio viejo hay slugs reciclados (por ejemplo, `camino-inka-extremo-5d-4n` contiene "Maras Moray + Machupicchu"), así que manda el contenido, no el slug.
+- **Transiciones:** View Transitions de Astro (`<ClientRouter />`). La foto de una tarjeta de paquete hace de *shared element* y "crece" hasta convertirse en el hero de la página del paquete. Respeta `prefers-reduced-motion`.
 
-## Home: orden
+## 5. Home y autoridad
 
-1. **Hero:** una foto grande real de Perú (Machu Picchu o el Valle Sagrado al amanecer o con luna), un H1 corto y con gancho (uno solo en toda la página), una bajada y el CTA principal. No pongas un buscador complicado.
-2. **Autoridad, apenas bajas** (esto es prioridad): una franja inmediatamente después del hero con señales de confianza:
-   - "Agencia local con base en Cusco", "Guías locales", "Atención antes, durante y después del viaje".
-   - Espacios para la nota de **Tripadvisor**/Google, los años operando, la cantidad de viajeros y el registro oficial (MINCETUR / DIRCETUR).
-   - **No inventes números ni reseñas.** Todo lo que sea dato va en `src/config.ts` como constante vacía (`ANIOS_OPERANDO`, `VIAJEROS`, `TRIPADVISOR_NOTA`, `TRIPADVISOR_URL`, `REGISTRO_MINCETUR`), y si está vacía, ese ítem no se muestra. Las frases cualitativas sí pueden ir.
-3. Las **5 categorías** como tarjetas grandes con foto.
-4. **Paquetes destacados:** 6 entre los más representativos (Machu Picchu full day, Valle Sagrado VIP, Montaña de Colores, Salkantay 4D, Cusco Tradicional 4D, Perú 360°), con duración y "desde S/ X".
-5. **Por qué Luna Llena:** 3 o 4 diferenciales concretos sacados del contenido real (recojo en el hotel, asesor 24 h, grupos chicos o privados, etc.).
-6. **Cómo funciona:** cuéntanos tu viaje → te armamos la propuesta → viajas acompañado.
-7. **Testimonios:** el componente queda listo pero vacío (`src/content/testimonios/`). Si no hay testimonios cargados, la sección no se renderiza.
-8. **Blog:** los 3 últimos posts.
-9. **FAQ** corta y **CTA final**.
+### 5.1 Home (corto, en este orden)
 
-## Página de paquete: el itinerario
+1. **Hero:** la foto dentro del sol del logo, un H1 corto (uno solo por página), la bajada y dos acciones: "Ver viajes" (principal) y "Cotiza a medida" (secundaria).
+2. **Franja de autoridad, inmediatamente debajo del hero.** Es una sola fila, ordenada por peso:
+   - **Tripadvisor primero y grande:** el badge Travelers' Choice + la nota + la cantidad de reseñas + **una cita corta real** de un viajero, rotando entre 3 con un fundido lento y pausable.
+   - **Los sellos oficiales en gris**, que se colorean al pasar el mouse o al enfocarlos: MINCETUR, GERCETUR Cusco, Safe Travels (WTTC) y Protégeme/ESNNA. Debajo, una línea: "Operador local registrado · Oficina en San Blas, Cusco" y el link "Conoce quiénes somos →" a `/nosotros`.
+   - Los datos que no tengas confirmados (la nota, la cantidad de reseñas y las citas de Tripadvisor) van en `src/config.ts` como constantes vacías. Si una está vacía, ese ítem no se muestra. **Nunca inventes números ni reseñas.** Puedes intentar sacar los datos reales del perfil público de Tripadvisor de la agencia. Si lo logras, anota la fuente en `DECISIONES.md`.
+3. **Las 5 categorías** como "puertas" grandes con foto: una grande y cuatro medianas.
+4. **3 viajes destacados:** Cusco Tradicional 4D/3N, Salkantay 4D/3N y Perú 360° 10D/9N, con la duración, "desde USD X" y el perfil de altura en miniatura.
+5. **Por qué Luna Llena:** 3–4 diferenciales concretos sacados del contenido real (operador local en San Blas, asesor y transfer 24 h, recojo en el hotel, hotel céntrico).
+6. **Cómo reservar:** eliges y pagas el 30% → confirmamos en menos de 24 h → completas los pasaportes → viajas.
+7. **CTA final.**
 
-Es lo más importante después del home. Hoy es un muro de texto.
+Nada de FAQ ni catálogo completo en el home.
 
-- **Cabecera:** una foto grande y una ficha corta con duración, dificultad, edad mínima, "desde S/ X" y el CTA. En desktop, la ficha queda sticky en la columna derecha. En mobile se convierte en una barra fija abajo con precio + "Cotiza".
-- **Resumen:** 2–3 líneas en lenguaje humano, no en MAYÚSCULAS.
-- **Itinerario día por día:**
-  - Una **línea de tiempo vertical**: cada día es un bloque con número, título, **foto del lugar** y los horarios clave (03:45 recojo, 05:05 tren, etc.) como una lista prolija. La "NOTA" larga va detrás de un "Ver detalle" desplegable (`<details>`).
-  - Un **índice de días sticky** (chips "Día 1 · Día 2 …") que resalta el día visible con IntersectionObserver y hace scroll suave al tocarlo.
-  - Usa `scroll-margin-top` para que el header no tape el título.
-  - Respeta `prefers-reduced-motion`.
-  - Las fotos se cargan con lazy-load y llevan `aspect-ratio` reservado (sin saltos de layout).
-- **Opciones** (en los de Machu Picchu): un selector simple de tipo de tren o de acceso, que cambia el precio y los horarios mostrados.
-- **Incluye / No incluye:** en dos columnas, con íconos de check y cruz.
-- **Galería:** horizontal con scroll-snap, swipe en mobile y flechas en desktop.
-- **Qué llevar** y **notas importantes**, cuando existan.
-- **Paquetes relacionados:** 3 de la misma categoría.
-- Agrega **JSON-LD** (`TouristTrip` / `Product` con `offers` en PEN) y metadatos OG por paquete.
+### 5.2 `/nosotros`
 
-## Contenido: cómo migrarlo
+Acá va todo lo que en el home sería trámite:
+- La razón social y el **RUC 20603319428**.
+- Las oficinas: Calle Chihuampata 543, San Blas, Cusco, y 2 Square de Monte Cristo, 78160 Marly-le-Roi, Francia.
+- Qué significa cada sello, el equipo (con espacio para fotos) y el enlace a Tripadvisor.
 
-1. Haz scraping de **todas** las páginas `https://lunallenatravel.com/packages/*` (la lista sale del menú del home) y de los posts del blog. Extrae el título, la duración, la dificultad, la edad mínima, el precio "From S/." (está en las tarjetas de listados), el destino, el resumen del "incluye", los días con sus horarios y notas, las fotos y el "no incluye", si existe.
-2. **Reescribe** el texto: pásalo de MAYÚSCULAS a oración, corrige ortografía y errores de día ("el tercer día" dentro del día 2) y llévalo a "tú" neutro. No cambies los datos duros (horarios, precios, qué incluye). Si un dato es dudoso o contradictorio, márcalo con `"revisar": "motivo"` en el archivo y lístalo en `DECISIONES.md`.
-3. Guarda el JSON crudo del scraping en `referencia/scraping/` para poder auditarlo.
+**Verifica cada dato contra el sitio actual** antes de publicarlo.
 
-## Fotos
+## 6. Página de paquete: itinerario con scroll narrativo
 
-- **Primero, las fotos de la propia agencia** (`/wp-content/uploads/...` del sitio actual), si tienen buena calidad.
-- Para lo que falte, solo fotos libres de **Unsplash o Pexels** que sean **de Perú real y del lugar correcto** (nada de Bolivia, Chile ni Nepal haciéndose pasar por el Ausangate). Lleva un registro en `public/fotos/CREDITOS.md` con la URL de origen y el autor.
-- Todo va descargado al repo, sin hotlinks, pasado por `astro:assets` o convertido a **WebP/AVIF** en varios tamaños (`srcset`). El hero no debería pasar de ~250 kB en mobile.
-- Cada día del itinerario lleva la foto de su lugar. Si dos días repiten lugar, usa una foto distinta.
+Es la pieza más importante del sitio.
 
-## Calidad mínima antes del PR
+- **Cabecera:** la foto grande, el título, la ubicación y una ficha con duración, dificultad, edad mínima, altura máxima y "desde USD X por persona".
+- **Ficha de compra:**
+  - En desktop queda **sticky en la columna derecha**, con el botón **"Reservar con 30%"** (principal) y debajo "Prefiero cotizar" (secundario, en texto o con contorno).
+  - En mobile se convierte en una barra fija abajo con el precio y "Reservar", respetando el safe-area.
+- **Perfil de altura como índice de días:** la línea de montaña del logo dibuja la altura de cada día, con un punto por día. El punto del día visible se resalta en naranja, y tocar un punto lleva a ese día con scroll suave. En desktop va arriba del itinerario; en mobile queda fijo debajo del header mientras dura el itinerario y funciona también como barra de progreso.
+- **Itinerario en desktop, scroll narrativo:**
+  - La **foto queda fija a la izquierda**, ocupando media pantalla, y los **días van a la derecha**.
+  - Cuando un día entra en vista (IntersectionObserver), la foto pasa a la de ese día con un **fundido de unos 300 ms**, solo con opacity, sin mover el layout.
+  - Cada día lleva el número, el título, el lugar, la altura, 2–3 líneas de resumen, los **horarios clave** en una lista prolija (con números tabulares) y un "Ver detalle" (`<details>`) con la nota larga.
+- **Itinerario en mobile:** todo vertical, con la foto de cada día arriba de su bloque y lazy-load con `aspect-ratio` reservado.
+- **Opciones del paquete:** en Machu Picchu, las variantes que solo cambian el tren (Expeditions, Vistadome/Observatory, Hiram Bingham, tren local) o el acceso (tren u Hidroeléctrica) son **opciones de un mismo paquete**, no páginas separadas. Cada opción tiene su diferencia de precio y de horarios.
+- **Debajo del itinerario:**
+  - Incluye / no incluye, en dos columnas.
+  - Qué llevar, cuando exista.
+  - Notas importantes: la altura y las restricciones. **Camino Inka cerrado en febrero; los permisos se agotan con meses de anticipación.**
+  - 3 paquetes relacionados.
+- **SEO:** JSON-LD `TouristTrip` + `Offer` en USD, metadatos OG por paquete y `sitemap.xml`.
 
-- Lighthouse mobile en el home y en un paquete: Performance ≥ 90, Accesibilidad ≥ 95, SEO ≥ 95.
-- Sin scroll horizontal a 375px. Todos los targets táctiles ≥ 44px. Focus visible. Un solo H1 por página y jerarquía de títulos correcta.
-- El chequeo de links pasa: cero `href="#"` y cero links internos rotos.
-- `npm run build` limpio. Tiene que estar el `README.md` con cómo agregar o editar un paquete (qué archivo tocar y qué campos tiene).
-- `sitemap.xml`, `robots.txt` y `_redirects` generados.
+## 7. Compra online: reserva con seña del 30%
 
-## Referencia (no copiar)
+### 7.1 Reglas de negocio
 
-En `referencia/borrador-2026-10-22.html` hay un borrador estático anterior de una sola página. Puedes mirarlo para ideas de secciones, pero **no lo uses de base**: usa voseo (está mal para esta marca), su naranja (`#ed6a24`) no es el de marca y es una sola página, no un sitio.
+- Se cobra **online una seña del 30%** del total. El saldo se paga después: por link de pago o al llegar a Cusco, y queda anotado en la reserva.
+- **Moneda: USD en todo el sitio.** Cada paquete tiene su `precio_usd` (por persona, adulto), su `precio_usd_menor` (opcional) y su `edad_menor_max`, cargados a mano. No se convierte nada automáticamente.
+- **Mientras la agencia no pase la lista de precios en USD**, carga `precio_usd: null` en todos los paquetes. Si es `null`, la página muestra solo "Cotiza este viaje" y oculta "Reservar". Así el sitio funciona desde el día uno. Si quieres, deja precios de ejemplo marcados con `"precio_ejemplo": true` solo en los 3 destacados, para probar el flujo, y avísalo en `DECISIONES.md`.
+- **La reserva no se confirma sola.** Tras el pago queda en estado "Seña pagada, confirmando disponibilidad", y la agencia confirma en menos de 24 h. **Si no hay cupo, se devuelve la seña completa.** Esto se dice antes de pagar, no en letra chica.
+- **Fecha mínima:** hoy + 3 días para los tours y hoy + 7 días para los paquetes y treks, configurable por paquete (`anticipacion_min_dias`). Hay que poder bloquear fechas por paquete (`fechas_bloqueadas`, por ejemplo Camino Inka en febrero).
+- **El total y la seña se calculan SIEMPRE en el servidor** a partir del archivo del paquete. Nunca se acepta un monto que venga del cliente.
+
+### 7.2 Flujo en 3 pasos (`/reservar/<slug>`)
+
+En una misma página, con un indicador de pasos y la posibilidad de volver atrás sin perder lo cargado. El borrador se guarda en `sessionStorage`.
+
+1. **Tu viaje:**
+   - Un calendario con la fecha de inicio, que respeta la anticipación mínima y las fechas bloqueadas.
+   - Adultos y menores, con steppers de 44px mínimo.
+   - La opción del paquete (tren, hotel), si existe.
+   - Un **resumen sticky** con el total, la seña del 30% y el saldo, que se actualiza en vivo.
+2. **Tus datos (solo de quien reserva):**
+   - Nombre, email, WhatsApp (con prefijo de país) y país.
+   - Un campo opcional "¿algo que debamos saber?" (alergias, celebraciones, movilidad).
+   - Una casilla obligatoria para aceptar los términos y la política de cancelación, con links.
+   - Labels visibles, validación al salir del campo y errores debajo de cada campo.
+3. **Pago:** dos botones, **"Pagar seña con tarjeta"** (Stripe Checkout) y **"Pagar con PayPal"**. Antes de los botones se repite el resumen y la regla de "confirmamos en menos de 24 h o te devolvemos la seña".
+
+### 7.3 Backend (`functions/api/`)
+
+- **`POST /api/reservas`:**
+  1. Valida los datos.
+  2. Recalcula los montos.
+  3. Crea la fila en `reservas` con `estado='pendiente_pago'`.
+  4. Crea la **Stripe Checkout Session**: `mode=payment`, `currency=usd`, un line item "Seña 30% — <paquete> — <fecha>", `customer_email`, `metadata.reserva_id`, `success_url=/reserva/<id>?ok=1` y `cancel_url=/reservar/<slug>?cancelado=1`. Si se eligió PayPal, crea la orden de PayPal (Orders v2, intent CAPTURE).
+  5. Devuelve la URL de pago o el id de la orden.
+- **`POST /api/stripe/webhook`:**
+  - **Verifica la firma** con `STRIPE_WEBHOOK_SECRET`; en Workers, con `constructEventAsync` y `SubtleCrypto`.
+  - Con `checkout.session.completed` marca `estado='sena_pagada'` y guarda el `payment_intent`.
+  - Es **idempotente**: si llega dos veces, no duplica nada.
+- **`POST /api/paypal/capture` + `POST /api/paypal/webhook`:** el equivalente de PayPal, con verificación del webhook.
+- **Al quedar pagada:**
+  1. Crea o actualiza el **lead en `leads`**, con `fuente='Web: reserva'`, el paquete y el monto, para que aparezca en el CRM.
+  2. Genera un **token de viajeros** con vencimiento = **fecha de viaje − 15 días**.
+  3. Manda **dos mails por Resend**:
+     - **Al viajero:** la confirmación de que recibimos la seña, que confirmamos en menos de 24 h, el resumen y el link para completar los pasaportes.
+     - **A `AVISO_EMAIL`:** los datos de la reserva y un botón `wa.me` al WhatsApp del viajero.
+- **`/reserva/<id>`:** muestra el estado (pendiente de pago / seña pagada / confirmada / cancelada), el resumen y, si está pagada, el botón "Completar datos de viajeros".
+- **`/reserva/<id>/viajeros?t=<token>`:** un bloque por viajero, con la cantidad que salió de la reserva: nombre completo como figura en el pasaporte, nacionalidad, tipo y número de documento, fecha de nacimiento y sexo (que piden las entradas de Machu Picchu). Guarda en `reserva_viajeros`. Si el token venció, muestra cómo contactar a la agencia.
+- **Migración nueva en `migrations/`:**
+  - `reservas`: id, slug_paquete, opcion, fecha_inicio, adultos, menores, total_usd, sena_usd, saldo_usd, nombre, email, whatsapp, pais, notas, estado, proveedor_pago, pago_ref, token_viajeros, token_vence, creado_en, actualizado_en.
+  - `reserva_viajeros`.
+  - `libro_reclamaciones`.
+  - Antes de escribir en `leads`, mira su esquema real en la migración más reciente de la plantilla del CRM, o pregúntamelo en `DECISIONES.md` si no lo encuentras. **Nada destructivo.**
+- **Seguridad:**
+  - El sitio nunca ve datos de tarjetas.
+  - Rate limit básico en `POST /api/reservas`.
+  - Honeypot contra bots.
+  - Los tokens de viajeros son aleatorios de 32 bytes.
+  - En `/reserva/<id>` se usa un id no adivinable (UUID).
+
+### 7.4 Cotizar y WhatsApp (secundarios)
+
+- **"Prefiero cotizar" / "Cotiza a medida"** llevan a `https://luna-llena-viaje.pages.dev/paquetes?paquete=<slug>&origen=web`, que ya está en producción y escribe en el mismo CRM. En las páginas genéricas, a `https://luna-llena-viaje.pages.dev/?origen=web`.
+- **Botón flotante de WhatsApp** al **+51 930 299 443**, con un mensaje prellenado según la página ("Hola, me interesa <paquete>"). Debe ser **rectangular con radio chico**, no una píldora, y no puede tapar la barra de compra en mobile: se apila arriba de ella.
+
+### 7.5 Pruebas obligatorias antes del PR
+
+- **Una compra completa en modo test de Stripe** (tarjeta `4242 4242 4242 4242`), con el webhook simulado con `stripe trigger` o con una llamada firmada en local. Tiene que verse la reserva pasar a `sena_pagada`, el lead en `leads`, los dos mails (o su payload, si no hay key) y el formulario de viajeros guardando datos.
+- **Lo mismo en el sandbox de PayPal.** Si no hay credenciales, deja el flujo escrito y probado con mocks, y documenta en el README qué falta.
+- **Casos borde:** el pago cancelado vuelve al paso 3 con los datos intactos, un webhook duplicado no duplica nada, una fecha bloqueada se rechaza en el servidor y un monto manipulado en el cliente se ignora.
+
+## 8. Contenido y fotos
+
+- **Scraping** de todas las páginas `https://lunallenatravel.com/packages/*` (la lista sale del menú del home: unos 80 paquetes) y de los posts de `/category/travel-blog/`. El JSON crudo se guarda en `referencia/scraping/` para poder auditarlo. Los precios viejos en soles ("From S/. …") van en `precio_pen_referencia`, solo como referencia interna, sin mostrarse.
+- Si un dato es dudoso o contradictorio, márcalo en el archivo con `"revisar": "motivo"` y lístalo en `DECISIONES.md`.
+- **Retiros (ayahuasca, San Pedro, kambo y los demás):** tono sobrio y respetuoso, sin promesas de sanación ni claims médicos, con una nota de "requiere entrevista previa". **Estos se cotizan, no se compran:** sin botón "Reservar".
+- El paquete "Perú Mágico + Salar de Uyuni" incluye Bolivia: dilo en el texto.
+- **Testimonios:** los del sitio viejo son de la demo del theme (Heidi de New York, Ben & Judy de Miami, Jasper de San Francisco). **No los uses.**
+- **Fotos:**
+  - Primero, las de la propia agencia que tengan buena calidad (`/wp-content/uploads/...`).
+  - Después, fotos libres de Unsplash o Pexels **de Perú real y del lugar correcto**, con registro en `public/fotos/CREDITOS.md`.
+  - Todo descargado al repo y procesado con `astro:assets`, en AVIF/WebP con `srcset`. El hero no puede pasar de unos 250 kB en mobile.
+  - **Cada día del itinerario lleva la foto de su lugar.**
+
+## 9. Calidad mínima
+
+- **Lighthouse mobile** en el home, un paquete y `/reservar`: Performance ≥ 90, Accesibilidad ≥ 95, SEO ≥ 95.
+- **Responsive y accesibilidad:**
+  - Sin scroll horizontal a 375px.
+  - Targets táctiles ≥ 44px.
+  - Focus visible.
+  - Un H1 por página y jerarquía de títulos correcta.
+  - Contraste AA.
+  - `prefers-reduced-motion` respetado.
+- **Chequeo automático de links** sobre `dist/` (script en `npm run check:links`): falla con cualquier `href="#"` o link interno roto.
+- `npm run build` limpio.
+- **`README.md`** con:
+  - Cómo editar un paquete y cómo cargar los precios en USD.
+  - Cómo pasar Stripe y PayPal a modo real.
+  - Qué variables cargar en Cloudflare.
+  - Cómo aplicar la migración.
+
+---
+
+**Antes de tocar nada, lee `referencia/borrador-2026-10-22.html`, que es un borrador viejo de una sola página.** Úsalo solo como fuente de ideas: tiene voseo y otra paleta, y no se usa de base.
