@@ -1,0 +1,27 @@
+<!-- @dsCard group="Media" height=400 subtitle="Foto a sangre con filtro, viñeta y gradiente oscuro para texto legible" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-dark); }
+  #root { height: 400px; padding: 0; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const h = React.createElement;
+  const { PhotoBackdrop } = window.VisiteArPeru;
+const photo = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice"><defs><linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#a9c9de"/><stop offset="1" stop-color="#5f86a3"/></linearGradient></defs><rect width="400" height="500" fill="url(#s)"/><path d="M0 330 L110 190 L190 280 L270 150 L400 320 L400 500 L0 500Z" fill="#41607a"/><path d="M0 400 L130 300 L240 380 L330 290 L400 360 L400 500 L0 500Z" fill="#2c4358"/></svg>');
+  const SB = window.VisiteArPeru;
+  ReactDOM.createRoot(document.getElementById('root')).render(
+    h(PhotoBackdrop, { src: photo },
+      h('div', { style: { position: 'absolute', left: 40, right: 40, bottom: 32 } },
+        h(SB.SignatureBlock, null,
+          h(SB.Kicker, { style: { marginBottom: 12 } }, 'Patagonia'),
+          h(SB.Hook, { size: '44px', highlight: 'silencio' }, 'El glaciar en silencio')))));
+</script>
+</body>
+</html>

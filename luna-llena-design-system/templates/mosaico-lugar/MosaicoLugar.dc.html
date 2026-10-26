@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Carrusel · Mosaico de lugar" description="Slide 1080×1350: un lugar visto en cuatro fotos (mosaico 2×2 con junta blanca, saturación plena) y una sola píldora blanca con el nombre del lugar sobre la junta central. El post menos verbal del sistema" -->
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="./ds-base.js"></script>
+  <style>
+    body { margin:0; background:#161616; display:grid; place-items:center; min-height:100vh; }
+  </style>
+</helmet>
+
+<div style="position:relative; width:1080px; height:1350px; overflow:hidden; background:#FFFFFF; font-family:'Inter',sans-serif; box-shadow:0 30px 80px rgba(0,0,0,0.5);">
+
+  <div ref="{{ gridRef }}" style="position:absolute; inset:0; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:6px; background:#FFFFFF;">
+    <div style="background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:50% 30%; filter:saturate(1) brightness(1);"></div>
+    <div style="background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:70% 40%; filter:saturate(1) brightness(1);"></div>
+    <div style="background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:20% 70%; filter:saturate(1) brightness(1);"></div>
+    <div style="background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:50% 75%; filter:saturate(1) brightness(1);"></div>
+  </div>
+
+  <div style="position:absolute; top:0; left:0; right:0; height:300px; background:linear-gradient(to bottom, rgba(22,22,22,0.55) 0%, rgba(22,22,22,0.18) 45%, rgba(22,22,22,0) 100%); pointer-events:none;"></div>
+
+  <div style="position:absolute; top:70px; left:74px;">
+    <x-import component-from-global-scope="VisiteArPeru.LogoMark" variant="white" size="{{ logoSize }}" hint-size="130px,30px"></x-import>
+  </div>
+
+  <div ref="{{ pildoraRef }}" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); display:flex; align-items:center; gap:18px; max-width:900px; padding:20px 42px; border-radius:999px; background:#FFFFFF;">
+    <svg ref="{{ pinRef }}" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#FF7A00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;">
+      <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1 1 16 0z"></path>
+      <circle cx="12" cy="10" r="3"></circle>
+    </svg>
+    <p ref="{{ nombreRef }}" style="margin:0; white-space:nowrap; color:#161616; font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:800; font-size:42px; letter-spacing:0.04em; line-height:1; text-transform:uppercase;">Cataratas</p>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350},&quot;etiquetaAncla&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;centro&quot;,&quot;pie&quot;],&quot;default&quot;:&quot;centro&quot;,&quot;tsType&quot;:&quot;'centro'|'pie'&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;junta&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6,&quot;min&quot;:0,&quot;max&quot;:24,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Layout&quot;},&quot;pin&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Etiqueta&quot;},&quot;pinAcento&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Etiqueta&quot;},&quot;filtroMarca&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Foto&quot;}}">
+class Component extends DCLogic {
+  gridRef = React.createRef();
+  pildoraRef = React.createRef();
+  pinRef = React.createRef();
+  nombreRef = React.createRef();
+
+  apply() {
+    const grid = this.gridRef.current;
+    const pil = this.pildoraRef.current;
+    const pin = this.pinRef.current;
+
+    // El filtro de marca esta APAGADO por default en este estilo: la pieza vive de la
+    // saturacion de las fotos. Encenderlo cohesiona un set disparejo a costa del brillo.
+    if (grid) {
+      const f = (this.props.filtroMarca ?? false) ? 'saturate(0.82) brightness(0.93)' : 'saturate(1) brightness(1)';
+      for (const q of grid.children) q.style.filter = f;
+      grid.style.gap = (this.props.junta ?? 6) + 'px';
+    }
+
+    // Ancla de la etiqueta: sobre la junta central (default, como la referencia) o al pie,
+    // que libera el centro cuando las cuatro fotos tienen sujeto en el medio.
+    if (pil) {
+      const pie = (this.props.etiquetaAncla ?? 'centro') === 'pie';
+      pil.style.top = pie ? 'auto' : '50%';
+      pil.style.bottom = pie ? '90px' : 'auto';
+      pil.style.transform = pie ? 'translateX(-50%)' : 'translate(-50%,-50%)';
+    }
+
+    if (pin) {
+      pin.style.display = (this.props.pin ?? true) ? 'block' : 'none';
+      pin.setAttribute('stroke', (this.props.pinAcento ?? true) ? '#FF7A00' : '#161616');
+    }
+  }
+
+  componentDidMount() { this.apply(); }
+  componentDidUpdate() { this.apply(); }
+
+  renderVals() {
+    return {
+      gridRef: this.gridRef,
+      pildoraRef: this.pildoraRef,
+      pinRef: this.pinRef,
+      nombreRef: this.nombreRef,
+      logoSize: 26,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

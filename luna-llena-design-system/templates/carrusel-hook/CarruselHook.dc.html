@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Carrusel · Hook" description="Slide de apertura 1080×1350: foto con overlay, kicker y hook con keyword en naranja" -->
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="./ds-base.js"></script>
+  <style>
+    body { margin:0; background:#161616; display:grid; place-items:center; min-height:100vh; }
+  </style>
+</helmet>
+
+<div style="position:relative; width:1080px; height:1350px; overflow:hidden; background:#161616; font-family:'Inter',sans-serif; box-shadow:0 30px 80px rgba(0,0,0,0.5);">
+
+  <div style="position:absolute; inset:0; background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:center; filter:saturate(0.82) brightness(0.93);"></div>
+  <div style="position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 30%, rgba(0,0,0,0) 55%, rgba(22,22,22,0.35) 100%);"></div>
+  <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(22,22,22,0) 0%, rgba(22,22,22,0) 38%, rgba(22,22,22,0.55) 64%, rgba(22,22,22,0.88) 84%, rgba(22,22,22,0.97) 100%);"></div>
+
+  <div style="position:absolute; top:80px; left:80px; right:80px; display:flex; align-items:center; justify-content:space-between;">
+    <x-import component-from-global-scope="VisiteArPeru.LogoMark" variant="white" size="{{ logoSize }}" hint-size="140px,34px"></x-import>
+    <span style="font-weight:600; font-size:24px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.55);">01 / 08</span>
+  </div>
+
+  <div style="position:absolute; left:80px; right:80px; bottom:90px;">
+    <div style="font-weight:600; font-size:26px; letter-spacing:0.14em; text-transform:uppercase; color:#FF7A00; margin-bottom:22px;">Argentina sin errores</div>
+    <h2 style="margin:0; font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:800; font-size:94px; letter-spacing:-0.03em; line-height:1.0; color:#FFFFFF; text-wrap:balance;">Los 8 lugares que <span style="color:#FF7A00;">no</span> podés saltearte en tu primer viaje</h2>
+    <div style="margin-top:34px; display:flex; align-items:center; gap:14px; font-weight:600; font-size:24px; letter-spacing:0.02em; color:rgba(255,255,255,0.82);">
+      <svg width="46" height="46" viewBox="0 0 48 48" fill="none"><path d="M5 24 H41 M30 13 L43 24 L30 35" stroke="#FF7A00" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+      <span>Deslizá</span>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350}}">class Component extends DCLogic {
+  renderVals() {
+    return { logoSize: 28 };
+  }
+}</script>
+</body>
+</html>

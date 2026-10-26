@@ -1,0 +1,23 @@
+<!-- @dsCard group="UI" height=120 subtitle="Flecha de línea para «deslizá», horizontal o hacia abajo" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-dark); }
+  #root { padding: 36px 40px; display: flex; align-items: center; gap: 24px; }
+  .row { display: flex; align-items: center; gap: 14px; color: var(--on-dark-muted); font-weight: 600; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const h = React.createElement;
+  const { ArrowChip } = window.VisiteArPeru;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h('div', { className: 'row' }, h(ArrowChip), h('span', null, 'Deslizá')),
+    h(ArrowChip, { direction: 'down' })));
+</script>
+</body>
+</html>

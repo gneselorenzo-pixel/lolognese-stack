@@ -1,0 +1,25 @@
+<!-- @dsCard group="Marca" height=200 subtitle="Wordmark visite.ar con punto naranja: variantes clara y oscura, con y sin handle" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--white); }
+  #root { display: flex; }
+  .cell { flex: 1; padding: 32px 36px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px; justify-content: center; min-height: 200px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const h = React.createElement;
+  const { LogoMark } = window.VisiteArPeru;
+  const cell = (bg, variant) => h('div', { className: 'cell', style: { background: bg } },
+    h(LogoMark, { variant, size: 34 }),
+    h(LogoMark, { variant, size: 24, showHandle: true }));
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    cell('var(--text)', 'white'), cell('var(--bg)', 'dark')));
+</script>
+</body>
+</html>

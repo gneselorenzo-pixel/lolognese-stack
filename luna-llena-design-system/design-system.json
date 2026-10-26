@@ -1,0 +1,17 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": { "v": 1, "at": "2026-10-22T20:00:00Z" },
+  "title": "Visite.ar Perú",
+  "namespace": "VisiteArPeru",
+  "libraries": [
+    { "name": "react", "version": "18" },
+    { "name": "react-dom", "version": "18" }
+  ],
+  "sections": {},
+  "groups": ["Other"],
+  "assetGroups": { "Other": { "files": {}, "name": "Other", "order": [] } },
+  "blobs": {},
+  "docs": { "readme": "project/README.md", "sections": [] },
+  "lastChange": { "by": "Claude", "via": "Claude Code", "at": "2026-10-22T20:00:00Z", "note": "Visite.ar Perú: variante de Visite.ar Original con paleta naranja y blanco y tipografía Bricolage Grotesque + Inter" }
+}

@@ -1,0 +1,28 @@
+<!-- @dsCard group="Spacing" viewport="700x240" name="Overlay de foto" subtitle="Gradiente oscuro transparente→sólido (≈60% inferior) + filtro saturate .82 brightness .93" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components/bundle.css">
+<style>
+  body { margin: 0; font-family: var(--font-sans); }
+  .wrap { position: relative; height: 240px; overflow: hidden; background: var(--surface-dark); }
+  .photo { position: absolute; inset: 0; background: url('../assets/placeholder.jpg') center/cover; filter: var(--photo-filter); }
+  .vig { position: absolute; inset: 0; background: var(--overlay-vignette); }
+  .ovl { position: absolute; inset: 0; background: var(--overlay-gradient); }
+  .txt { position: absolute; left: 28px; bottom: 24px; border-left: 5px solid var(--primary); padding-left: 24px; }
+  .k { font-weight: 600; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--primary); }
+  .h { font-weight: 800; font-size: 34px; letter-spacing: -0.03em; line-height: 1.02; color: var(--white); margin-top: 8px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="photo"></div>
+    <div class="vig"></div>
+    <div class="ovl"></div>
+    <div class="txt"><div class="k">Patagonia</div><div class="h">Texto siempre legible</div></div>
+  </div>
+</body>
+</html>

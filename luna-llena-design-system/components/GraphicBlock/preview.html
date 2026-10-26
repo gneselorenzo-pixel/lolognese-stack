@@ -1,0 +1,27 @@
+<!-- @dsCard group="UI" height=200 subtitle="Bloque gráfico sin foto: círculo, anillo o barra" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-dark); }
+  #root { padding: 36px 40px; display: flex; gap: 16px; }
+  .gb-wrap { height: 128px; width: 200px; position: relative; border-radius: var(--radius-sm); overflow: hidden; }
+  .lab { position: absolute; left: 16px; bottom: 14px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const h = React.createElement;
+  const { GraphicBlock } = window.VisiteArPeru;
+  const K = window.VisiteArPeru.Kicker;
+  const cell = (shape, label, bg) => h('div', { className: 'gb-wrap' },
+    h(GraphicBlock, bg ? { shape, background: bg } : { shape },
+      h('div', { className: 'lab' }, h(K, { size: '14px' }, label))));
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    cell('circle', 'Circle'), cell('ring', 'Ring', 'var(--surface-dark-2)'), cell('bar', 'Bar')));
+</script>
+</body>
+</html>

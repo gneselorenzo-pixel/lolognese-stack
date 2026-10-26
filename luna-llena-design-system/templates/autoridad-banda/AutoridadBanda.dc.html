@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Carrusel · Autoridad" description="Pieza suelta 1080×1350: corte duro foto/banda oscuro, titular declarativo en mayúsculas centrado, inset circular y marcador de ranking en durazno" -->
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script src="./ds-base.js"></script>
+  <style>
+    body { margin:0; background:#161616; display:grid; place-items:center; min-height:100vh; }
+  </style>
+</helmet>
+
+<div style="position:relative; width:1080px; height:1350px; overflow:hidden; background:#161616; font-family:'Inter',sans-serif; box-shadow:0 30px 80px rgba(0,0,0,0.5);">
+
+  <div style="position:absolute; top:0; left:0; right:0; height:918px; overflow:hidden;">
+    <div style="position:absolute; inset:0; background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:center; filter:saturate(1) brightness(1);"></div>
+    <div style="position:absolute; inset:0; background:radial-gradient(120% 90% at 50% 32%, rgba(0,0,0,0) 52%, rgba(22,22,22,0.32) 100%);"></div>
+    <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(22,22,22,0) 0%, rgba(22,22,22,0) 56%, rgba(22,22,22,0.2) 84%, rgba(22,22,22,0.3) 100%);"></div>
+  </div>
+
+  <div style="position:absolute; top:58px; right:58px; width:420px; height:420px; border-radius:999px; border:10px solid #FF7A00; overflow:hidden; background:#242321;">
+    <div style="position:absolute; inset:0; background-image:url('../../assets/placeholder.jpg'); background-size:cover; background-position:60% 40%; filter:saturate(1) brightness(1.02);"></div>
+  </div>
+
+  <div style="position:absolute; top:96px; left:80px; display:flex; align-items:center; white-space:nowrap; gap:14px; padding:14px 26px; width:max-content; border-radius:999px; background:rgba(22,22,22,0.82); box-shadow:inset 0 0 0 2px #FFD3A8;">
+    <span style="font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:800; font-size:30px; letter-spacing:-0.01em; color:#FFD3A8;">N.º 1</span>
+    <span style="font-weight:600; font-size:22px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(255,255,255,0.92);">Ranking 2026</span>
+  </div>
+
+  <div style="position:absolute; left:0; right:0; bottom:0; height:432px; background:#161616;"></div>
+
+  <div style="position:absolute; left:0; right:0; bottom:432px; display:flex; justify-content:center; padding-bottom:26px;">
+    <x-import component-from-global-scope="VisiteArPeru.LogoMark" variant="white" size="{{ logoSize }}" hint-size="160px,38px"></x-import>
+  </div>
+
+  <div style="position:absolute; left:64px; right:64px; bottom:0; height:432px; display:flex; align-items:center; justify-content:center;">
+    <h2 style="margin:0; text-align:center; font-family:'Bricolage Grotesque',system-ui,sans-serif; font-weight:800; font-size:66px; letter-spacing:-0.02em; line-height:0.94; text-transform:uppercase; color:#FFFFFF; text-wrap:balance;">Argentina es el <span style="color:#FF7A00;">destino más elegido</span> de Sudamérica para 2026</h2>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1350}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { logoSize: 32 };
+  }
+}
+</script>
+</body>
+</html>

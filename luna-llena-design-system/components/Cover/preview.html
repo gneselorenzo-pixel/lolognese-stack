@@ -1,0 +1,44 @@
+<!-- @dsCard height=288 -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; }
+  .cover { position: relative; width: 960px; height: 288px; background: var(--bg); font-family: var(--font-sans); overflow: hidden; }
+  svg { position: absolute; left: 0; top: 0; }
+  .ink { fill: var(--text); }
+  .brand { fill: var(--primary); }
+  .tint { fill: var(--accent); }
+  .punct { fill: var(--accent); }
+  .p-c { fill: var(--primary); }
+  .p-w { fill: var(--bg); }
+  .tile { rx: var(--radius-sm); }
+  .text { position: absolute; left: 40px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 72px; line-height: .95; letter-spacing: -0.03em; color: var(--text); }
+  .tag { margin: 12px 0 0; font-weight: 500; font-size: 14px; color: var(--text-2); }
+</style>
+</head>
+<body>
+<div class="cover">
+<svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+<!-- Derivation
+ blocks: ink (text) 256x288 (bleeds off top and bottom), primary 208x176 (bleeds top/right), accent 208x96, accent disc r=20 (the dot of "visite.ar"), on ground bg
+ arrangement: tall ink slab at x=480 with a staggered column of two blocks at x=752, gaps of space-4 (16px)
+ pattern: stack of 6 pills (radius-pill, half the short side) alternating primary and white, the two fields of the palette; chosen because the system is soft, rounded and built from orange against white
+ steps and radii: 16px gap (space-4), 20px pill height with 36px pitch, radius-sm on blocks, radius-pill on pills
+-->
+<rect class="ink tile" x="480" y="-16" width="256" height="320"/>
+<rect class="brand tile" x="752" y="-16" width="224" height="192"/>
+<rect class="tint tile" x="752" y="192" width="208" height="96"/>
+<rect class="p-c" x="512" y="24" width="192" height="20" rx="10"/><rect class="p-w" x="512" y="60" width="192" height="20" rx="10"/><rect class="p-c" x="512" y="96" width="192" height="20" rx="10"/><rect class="p-w" x="512" y="132" width="192" height="20" rx="10"/><rect class="p-c" x="512" y="168" width="192" height="20" rx="10"/><rect class="p-w" x="512" y="204" width="192" height="20" rx="10"/>
+<circle class="punct" cx="682" cy="248" r="20"/>
+</svg>
+<div class="text">
+  <h1 class="name">Visite.ar Perú</h1>
+  <p class="tag">Naranja, Bricolage, Inter y voseo en cada post.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Contenido" height=260 subtitle="Lista de pasos numerados con título y descripción" -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Inter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: var(--font-sans); background: var(--surface-dark); }
+  #root { padding: 36px 40px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  const h = React.createElement;
+  const { StepList } = window.VisiteArPeru;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(StepList, { steps: [
+    { title: 'Lima', description: 'Días 1-2 — Miraflores, Barranco y ceviche.' },
+    { title: 'Cusco', description: 'Días 3-5 — Valle Sagrado y Machu Picchu.' },
+    { title: 'Arequipa', description: 'Días 6-8 — Cañón del Colca y centro histórico.' }
+  ] }));
+</script>
+</body>
+</html>
