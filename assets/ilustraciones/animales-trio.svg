@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Cóndor, puma y serpiente en fila sobre una línea de base</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="condor"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+</g>
+<g transform="translate(332.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="puma"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="currentColor"/></g>
+</g>
+<g transform="translate(652.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="serpiente"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g>
+<path d="M48 456 H976" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>

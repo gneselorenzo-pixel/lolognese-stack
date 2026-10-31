@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en cuatro cuñas: los cuatro suyos del Tahuantinsuyo</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="suyo-chinchay"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g>
+<g id="suyo-anti"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<g id="suyo-colla"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g></g>
+<g id="suyo-conti"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<g stroke-width="4"><path d="M275.8 236.2 L384 128"/><path d="M275.8 275.8 L384 384"/><path d="M236.2 275.8 L128 384"/><path d="M236.2 236.2 L128 128"/></g>
+<circle cx="256" cy="256" r="10" fill="var(--accent, #FF7A00)" stroke="none"/>
+</g>
+</svg>

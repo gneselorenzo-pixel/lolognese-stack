@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama llulla, no ser mentiroso: burbuja de diálogo partida por una línea quebrada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-llulla"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>

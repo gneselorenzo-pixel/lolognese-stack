@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Ciclo de la vida: nacer, crecer y fallecer por un camino escalonado con obstáculos</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="espiral" opacity="0.25"><path d="M512 296 H608 V248 H416 V344 H704 V200 H320 V392 H800 V152 H224 V440 H896"/></g>
+<path d="M96 416 H160 V368 H224 V320 H288 V272 H352 V224 H416 V176 H608 V224 H672 V272 H736 V320 H800 V368 H864 V416 H928"/>
+<path d="M170 368 L192 328 L214 368 Z M298 272 L320 232 L342 272 Z M434 176 L456 136 L478 176 Z"/>
+<path d="M56 384 C72 392 72 420 56 428 C40 420 40 392 56 384 Z"/>
+<path d="M968 384 L976 400 L992 408 L976 416 L968 432 L960 416 L944 408 L960 400 Z"/>
+<g stroke="var(--accent, #FF7A00)"><circle cx="560" cy="106" r="12"/><path d="M536 122 L560 144 L584 122 M560 144 V152 M544 176 L560 152 L576 176"/></g>
+</g>
+</svg>

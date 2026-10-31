@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Cóndor con las alas abiertas y el sol sobre la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="condor"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+<circle cx="256" cy="76" r="26" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>

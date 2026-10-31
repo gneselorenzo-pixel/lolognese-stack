@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chacana: ilustraciones del carrusel</title>
+<style>
+  :root { --w: 240px; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 24px; background: #eee; color: #161616; font: 14px/1.4 Inter, system-ui, sans-serif; }
+  h1 { font: 600 22px/1.2 Fraunces, Georgia, serif; margin: 0 0 12px; }
+  .bar { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+  .bar label { cursor: pointer; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(calc(var(--w) * 2 + 40px), 1fr)); gap: 20px; }
+  figure { margin: 0; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .p { padding: 12px; display: flex; align-items: center; justify-content: center; min-height: calc(var(--w) * 0.6); }
+  .p .ill { width: var(--w); height: auto; display: block; max-width: 100%; }
+  .dark { background: #161616; color: #fff; --accent: #FF7A00; }
+  .light { background: #fff; color: #161616; --accent: #E56D00; }
+  figcaption { margin-top: 6px; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>Chacana: 20 ilustraciones</h1>
+<div class="bar">
+  <span>Ancho de cada dibujo:</span>
+  <label><input type="radio" name="w" value="240" checked> 240 px</label>
+  <label><input type="radio" name="w" value="512"> 512 px</label>
+</div>
+<div class="grid">
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana: cruz escalonada inca con círculo central</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana: cruz escalonada inca con círculo central</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+</g>
+</svg>
+</div></div><figcaption>chacana-base.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en sus cuatro lados: animales, principios, montañas y niveles</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="lado-animales-o"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g>
+<g id="lado-principios-o"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-montanas-o"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-niveles-o"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="centro-o"><circle cx="256" cy="256" r="28"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en sus cuatro lados: animales, principios, montañas y niveles</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="lado-animales-c"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g>
+<g id="lado-principios-c"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-montanas-c"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-niveles-c"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="centro-c"><circle cx="256" cy="256" r="28"/></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-lados.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de animales resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-animales-o"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de animales resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-animales-c"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-resalta-animales.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de principios resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-principios-o"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de principios resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-principios-c"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-resalta-principios.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de montañas resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-montanas-o"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de montañas resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(180 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-montanas-c"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-resalta-montanas.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de niveles resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-niveles-o"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de niveles resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-niveles-c"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-resalta-niveles.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con tres círculos en cada uno de sus cuatro lados</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/><g transform="rotate(90 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g><g transform="rotate(180 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g><g transform="rotate(270 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con tres círculos en cada uno de sus cuatro lados</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/><g transform="rotate(90 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g><g transform="rotate(180 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g><g transform="rotate(270 256 256)"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g>
+</g>
+</svg>
+</div></div><figcaption>chacana-tres-puntos.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en cuatro cuñas: los cuatro suyos del Tahuantinsuyo</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="suyo-chinchay-o"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g>
+<g id="suyo-anti-o"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<g id="suyo-colla-o"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g></g>
+<g id="suyo-conti-o"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<g stroke-width="4"><path d="M275.8 236.2 L384 128"/><path d="M275.8 275.8 L384 384"/><path d="M236.2 275.8 L128 384"/><path d="M236.2 236.2 L128 128"/></g>
+<circle cx="256" cy="256" r="10" fill="var(--accent, #FF7A00)" stroke="none"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en cuatro cuñas: los cuatro suyos del Tahuantinsuyo</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="suyo-chinchay-c"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g>
+<g id="suyo-anti-c"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<g id="suyo-colla-c"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0.12" stroke="none"/></g></g>
+<g id="suyo-conti-c"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="currentColor" fill-opacity="0" stroke="none"/></g></g>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<g stroke-width="4"><path d="M275.8 236.2 L384 128"/><path d="M275.8 275.8 L384 384"/><path d="M236.2 275.8 L128 384"/><path d="M236.2 236.2 L128 128"/></g>
+<circle cx="256" cy="256" r="10" fill="var(--accent, #FF7A00)" stroke="none"/>
+</g>
+</svg>
+</div></div><figcaption>chacana-cuatro-suyos.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>De la Chacana a la cruz latina: le quitaron los escalones y le sumaron un palo</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<path d="M516 256 H612 M588 232 L612 256 L588 280" stroke="var(--accent, #FF7A00)"/>
+<path d="M736 48 H800 V160 H896 V224 H800 V464 H736 V224 H640 V160 H736 Z" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>De la Chacana a la cruz latina: le quitaron los escalones y le sumaron un palo</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 V160 H416 V192 H480 V320 H416 V352 H384 V384 H352 V416 H320 V480 H192 V416 H160 V384 H128 V352 H96 V320 H32 V192 H96 V160 H128 Z"/>
+<circle cx="256" cy="256" r="28"/>
+<path d="M516 256 H612 M588 232 L612 256 L588 280" stroke="var(--accent, #FF7A00)"/>
+<path d="M736 48 H800 V160 H896 V224 H800 V464 H736 V224 H640 V160 H736 Z" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div></div><figcaption>chacana-a-cruz.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Cóndor con las alas abiertas y el sol sobre la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="condor-o"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+<circle cx="256" cy="76" r="26" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Cóndor con las alas abiertas y el sol sobre la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="condor-c"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+<circle cx="256" cy="76" r="26" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div></div><figcaption>animal-condor.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Puma sentado de perfil con el lomo y la cola en espiral escalonada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="puma-o"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Puma sentado de perfil con el lomo y la cola en espiral escalonada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="puma-c"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div></div><figcaption>animal-puma.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Serpiente amaru en zigzag escalonado con ojo y rombo en la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="serpiente-o"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="var(--accent, #FF7A00)" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Serpiente amaru en zigzag escalonado con ojo y rombo en la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="serpiente-c"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="var(--accent, #FF7A00)" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div></div><figcaption>animal-serpiente.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Cóndor, puma y serpiente en fila sobre una línea de base</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="condor-o"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+</g>
+<g transform="translate(332.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="puma-o"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="currentColor"/></g>
+</g>
+<g transform="translate(652.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="serpiente-o"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g>
+<path d="M48 456 H976" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Cóndor, puma y serpiente en fila sobre una línea de base</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="condor-c"><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236"/><path d="M236 208 L136 184 L40 208 V336 H72 V312 H104 V296 H136 V280 H168 V270 H200 V262 H236 Z M72 312 V256 M104 296 V240 M136 280 V228 M168 270 V236" transform="translate(512 0) scale(-1 1)"/>
+<path d="M236 208 H276 V330 H296 V440 H272 V420 H240 V440 H216 V330 H236 Z"/>
+<path d="M232 204 L244 220 L256 206 L268 220 L280 204"/>
+<path d="M244 198 L234 180 L226 170 L210 178 L210 164 L226 146 L240 132 L258 128 L272 142 L270 198"/>
+<circle cx="246" cy="152" r="4" fill="currentColor" stroke="none"/></g>
+</g>
+<g transform="translate(332.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="puma-c"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="currentColor"/></g>
+</g>
+<g transform="translate(652.8 137.2) scale(0.7)" stroke-width="11.43">
+<g id="serpiente-c"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g>
+<path d="M48 456 H976" stroke="var(--accent, #FF7A00)"/>
+</g>
+</svg>
+</div></div><figcaption>animales-trio.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama sua, no ser ladrón: mano abierta con una barra de prohibición</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-sua-o"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama sua, no ser ladrón: mano abierta con una barra de prohibición</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-sua-c"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div></div><figcaption>principio-ama-sua.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama llulla, no ser mentiroso: burbuja de diálogo partida por una línea quebrada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-llulla-o"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama llulla, no ser mentiroso: burbuja de diálogo partida por una línea quebrada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-llulla-c"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
+</div></div><figcaption>principio-ama-llulla.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama quella, no ser ocioso: figura encorvada y un sol que sale por el horizonte</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-quella-o"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama quella, no ser ocioso: figura encorvada y un sol que sale por el horizonte</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-quella-c"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</svg>
+</div></div><figcaption>principio-ama-quella.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 384">
+<title>Los tres principios incas en fila: ama sua, ama llulla y ama quella</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-sua-o"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(332.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-llulla-o"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(652.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-quella-o"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 384">
+<title>Los tres principios incas en fila: ama sua, ama llulla y ama quella</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-sua-c"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(332.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-llulla-c"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(652.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-quella-c"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</g>
+</svg>
+</div></div><figcaption>principios-trio.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Tres montañas sagradas: Salcantay, Sahuasiray y Huanacauri</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 432 L137 176 M199 176 L296 432"/><path d="M168 200 L184 340"/><path d="M336 432 L424 184 L480 256 L528 216 L656 432"/><path d="M424 184 L448 432"/><path d="M470 300 L452 352 M504 296 L474 380 M538 300 L498 410"/><path d="M688 432 C712 340 760 304 840 304 C920 304 968 340 992 432"/>
+<g stroke="var(--accent, #FF7A00)"><path d="M168 96 L137 176 L153 158 L168 180 L184 158 L199 176 Z"/><path d="M812 304 H868 V280 H812 Z M824 280 V256 H856 V280 M834 256 V232 H846 V256"/></g>
+<path d="M32 432 H992"/>
+<circle cx="168" cy="52" r="14"/><circle cx="424" cy="140" r="14"/><circle cx="840" cy="192" r="14"/>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Tres montañas sagradas: Salcantay, Sahuasiray y Huanacauri</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 432 L137 176 M199 176 L296 432"/><path d="M168 200 L184 340"/><path d="M336 432 L424 184 L480 256 L528 216 L656 432"/><path d="M424 184 L448 432"/><path d="M470 300 L452 352 M504 296 L474 380 M538 300 L498 410"/><path d="M688 432 C712 340 760 304 840 304 C920 304 968 340 992 432"/>
+<g stroke="var(--accent, #FF7A00)"><path d="M168 96 L137 176 L153 158 L168 180 L184 158 L199 176 Z"/><path d="M812 304 H868 V280 H812 Z M824 280 V256 H856 V280 M834 256 V232 H846 V256"/></g>
+<path d="M32 432 H992"/>
+<circle cx="168" cy="52" r="14"/><circle cx="424" cy="140" r="14"/><circle cx="840" cy="192" r="14"/>
+</g>
+</svg>
+</div></div><figcaption>montanas-apus.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 768">
+<title>Los tres niveles de la tierra: Hanan Pacha, Kay Pacha y Uku Pacha</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M32 256 H480 M32 512 H480" stroke-width="4"/>
+<g id="nivel-hanan-o"><circle cx="256" cy="96" r="22"/><path d="M290 104 L314 96 L290 88 M274.38 125.7 L297.01 137.01 L285.7 114.38 M248 130 L256 154 L264 130 M226.3 114.38 L214.99 137.01 L237.62 125.7 M222 88 L198 96 L222 104 M237.62 66.3 L214.99 54.99 L226.3 77.62 M264 62 L256 38 L248 62 M285.7 77.62 L297.01 54.99 L274.38 66.3"/><circle cx="256" cy="184" r="9"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z" transform="translate(512 0) scale(-1 1)"/><path d="M240 208 H272 V244 H240 Z"/></g>
+<g id="nivel-kay-o"><g stroke="var(--accent, #FF7A00)"><path d="M32 464 H96 L136 424 L176 464 H336 L376 424 L416 464 H480"/><circle cx="256" cy="368" r="12"/><path d="M228 394 H284 M256 380 V430 M236 464 L256 430 L276 464"/></g></g>
+<g id="nivel-uku-o"><path d="M128 576 V548 M128 562 L108 548 M128 562 L148 548"/><path d="M128 576 C104 584 104 628 128 640 C152 628 152 584 128 576 Z"/><path d="M128 640 V716 M128 668 L98 694 M128 668 L158 694 M128 696 L110 716"/>
+<g transform="translate(216.64 492.16) scale(0.56)" stroke-width="14.29">
+<g id="serpiente-o"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 768">
+<title>Los tres niveles de la tierra: Hanan Pacha, Kay Pacha y Uku Pacha</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M32 256 H480 M32 512 H480" stroke-width="4"/>
+<g id="nivel-hanan-c"><circle cx="256" cy="96" r="22"/><path d="M290 104 L314 96 L290 88 M274.38 125.7 L297.01 137.01 L285.7 114.38 M248 130 L256 154 L264 130 M226.3 114.38 L214.99 137.01 L237.62 125.7 M222 88 L198 96 L222 104 M237.62 66.3 L214.99 54.99 L226.3 77.62 M264 62 L256 38 L248 62 M285.7 77.62 L297.01 54.99 L274.38 66.3"/><circle cx="256" cy="184" r="9"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z" transform="translate(512 0) scale(-1 1)"/><path d="M240 208 H272 V244 H240 Z"/></g>
+<g id="nivel-kay-c"><g stroke="var(--accent, #FF7A00)"><path d="M32 464 H96 L136 424 L176 464 H336 L376 424 L416 464 H480"/><circle cx="256" cy="368" r="12"/><path d="M228 394 H284 M256 380 V430 M236 464 L256 430 L276 464"/></g></g>
+<g id="nivel-uku-c"><path d="M128 576 V548 M128 562 L108 548 M128 562 L148 548"/><path d="M128 576 C104 584 104 628 128 640 C152 628 152 584 128 576 Z"/><path d="M128 640 V716 M128 668 L98 694 M128 668 L158 694 M128 696 L110 716"/>
+<g transform="translate(216.64 492.16) scale(0.56)" stroke-width="14.29">
+<g id="serpiente-c"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g></g>
+</g>
+</svg>
+</div></div><figcaption>tres-niveles.svg</figcaption></figure>
+<figure><div class="pair"><div class="p dark"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Ciclo de la vida: nacer, crecer y fallecer por un camino escalonado con obstáculos</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="espiral-o" opacity="0.25"><path d="M512 296 H608 V248 H416 V344 H704 V200 H320 V392 H800 V152 H224 V440 H896"/></g>
+<path d="M96 416 H160 V368 H224 V320 H288 V272 H352 V224 H416 V176 H608 V224 H672 V272 H736 V320 H800 V368 H864 V416 H928"/>
+<path d="M170 368 L192 328 L214 368 Z M298 272 L320 232 L342 272 Z M434 176 L456 136 L478 176 Z"/>
+<path d="M56 384 C72 392 72 420 56 428 C40 420 40 392 56 384 Z"/>
+<path d="M968 384 L976 400 L992 408 L976 416 L968 432 L960 416 L944 408 L960 400 Z"/>
+<g stroke="var(--accent, #FF7A00)"><circle cx="560" cy="106" r="12"/><path d="M536 122 L560 144 L584 122 M560 144 V152 M544 176 L560 152 L576 176"/></g>
+</g>
+</svg>
+</div><div class="p light"><svg class="ill" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Ciclo de la vida: nacer, crecer y fallecer por un camino escalonado con obstáculos</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="espiral-c" opacity="0.25"><path d="M512 296 H608 V248 H416 V344 H704 V200 H320 V392 H800 V152 H224 V440 H896"/></g>
+<path d="M96 416 H160 V368 H224 V320 H288 V272 H352 V224 H416 V176 H608 V224 H672 V272 H736 V320 H800 V368 H864 V416 H928"/>
+<path d="M170 368 L192 328 L214 368 Z M298 272 L320 232 L342 272 Z M434 176 L456 136 L478 176 Z"/>
+<path d="M56 384 C72 392 72 420 56 428 C40 420 40 392 56 384 Z"/>
+<path d="M968 384 L976 400 L992 408 L976 416 L968 432 L960 416 L944 408 L960 400 Z"/>
+<g stroke="var(--accent, #FF7A00)"><circle cx="560" cy="106" r="12"/><path d="M536 122 L560 144 L584 122 M560 144 V152 M544 176 L560 152 L576 176"/></g>
+</g>
+</svg>
+</div></div><figcaption>ciclo-vida.svg</figcaption></figure>
+</div>
+<script>
+  document.querySelectorAll('input[name=w]').forEach(function (r) {
+    r.addEventListener('change', function () { document.documentElement.style.setProperty('--w', r.value + 'px'); });
+  });
+</script>
+</body>
+</html>

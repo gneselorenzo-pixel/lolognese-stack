@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 512">
+<title>Tres montañas sagradas: Salcantay, Sahuasiray y Huanacauri</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M40 432 L137 176 M199 176 L296 432"/><path d="M168 200 L184 340"/><path d="M336 432 L424 184 L480 256 L528 216 L656 432"/><path d="M424 184 L448 432"/><path d="M470 300 L452 352 M504 296 L474 380 M538 300 L498 410"/><path d="M688 432 C712 340 760 304 840 304 C920 304 968 340 992 432"/>
+<g stroke="var(--accent, #FF7A00)"><path d="M168 96 L137 176 L153 158 L168 180 L184 158 L199 176 Z"/><path d="M812 304 H868 V280 H812 Z M824 280 V256 H856 V280 M834 256 V232 H846 V256"/></g>
+<path d="M32 432 H992"/>
+<circle cx="168" cy="52" r="14"/><circle cx="424" cy="140" r="14"/><circle cx="840" cy="192" r="14"/>
+</g>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama quella, no ser ocioso: figura encorvada y un sol que sale por el horizonte</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-quella"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</svg>

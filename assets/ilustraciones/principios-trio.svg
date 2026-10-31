@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 384">
+<title>Los tres principios incas en fila: ama sua, ama llulla y ama quella</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g transform="translate(12.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-sua"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(332.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-llulla"><circle cx="256" cy="256" r="200"/><path d="M120 148 H392 V308 H216 L168 356 V308 H120 Z"/><path d="M152 204 H224 M152 252 H208 M288 204 H360 M304 252 H360"/><path d="M256 148 L238 192 L274 232 L238 272 L256 308" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+<g transform="translate(652.8 12.8) scale(0.7)" stroke-width="11.43">
+<g id="ama-quella"><g transform="translate(0 -24)"><circle cx="180" cy="238" r="24"/><path d="M176 266 C108 270 100 328 122 348"/><path d="M122 348 L196 290 L252 348"/><path d="M100 348 H412"/><g stroke="var(--accent, #FF7A00)"><path d="M296 348 A44 44 0 0 1 384 348 M340 280 V296 M296 296 L306 308 M384 296 L374 308"/></g></g><circle cx="256" cy="256" r="200"/></g>
+</g>
+</g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana dividida en sus cuatro lados: animales, principios, montañas y niveles</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="lado-animales"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g>
+<g id="lado-principios"><g transform="rotate(270 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-montanas"><g transform="rotate(90 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="lado-niveles"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/></g></g>
+<g id="centro"><circle cx="256" cy="256" r="28"/></g>
+</g>
+</svg>

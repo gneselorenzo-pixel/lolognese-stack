@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Chacana con el lado de niveles resaltado y tres puntos en sus escalones</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g opacity="0.45"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(90 256 256)"/><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" transform="rotate(270 256 256)"/></g>
+<g opacity="0.45"><circle cx="256" cy="256" r="28"/></g>
+<g id="lado-niveles"><g transform="rotate(180 256 256)"><path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384 L275.8 236.2 A28 28 0 0 0 236.2 236.2 Z" fill="#FFD3A8" stroke="none"/>
+<path d="M128 128 H160 V96 H192 V32 H320 V96 H352 V128 H384" stroke="var(--accent, #FF7A00)"/>
+<path d="M275.8 236.2 A28 28 0 0 0 236.2 236.2" stroke="var(--accent, #FF7A00)"/>
+<g fill="var(--accent, #FF7A00)" stroke="none"><circle cx="256" cy="64" r="12"/><circle cx="256" cy="128" r="12"/><circle cx="256" cy="192" r="12"/></g></g></g>
+</g>
+</svg>

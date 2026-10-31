@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Serpiente amaru en zigzag escalonado con ojo y rombo en la cabeza</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="serpiente"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="var(--accent, #FF7A00)" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>

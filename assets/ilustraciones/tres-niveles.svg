@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 768">
+<title>Los tres niveles de la tierra: Hanan Pacha, Kay Pacha y Uku Pacha</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<path d="M32 256 H480 M32 512 H480" stroke-width="4"/>
+<g id="nivel-hanan"><circle cx="256" cy="96" r="22"/><path d="M290 104 L314 96 L290 88 M274.38 125.7 L297.01 137.01 L285.7 114.38 M248 130 L256 154 L264 130 M226.3 114.38 L214.99 137.01 L237.62 125.7 M222 88 L198 96 L222 104 M237.62 66.3 L214.99 54.99 L226.3 77.62 M264 62 L256 38 L248 62 M285.7 77.62 L297.01 54.99 L274.38 66.3"/><circle cx="256" cy="184" r="9"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z"/><path d="M240 208 L104 176 V206 H136 V218 H168 V226 H208 V232 H240 Z" transform="translate(512 0) scale(-1 1)"/><path d="M240 208 H272 V244 H240 Z"/></g>
+<g id="nivel-kay"><g stroke="var(--accent, #FF7A00)"><path d="M32 464 H96 L136 424 L176 464 H336 L376 424 L416 464 H480"/><circle cx="256" cy="368" r="12"/><path d="M228 394 H284 M256 380 V430 M236 464 L256 430 L276 464"/></g></g>
+<g id="nivel-uku"><path d="M128 576 V548 M128 562 L108 548 M128 562 L148 548"/><path d="M128 576 C104 584 104 628 128 640 C152 628 152 584 128 576 Z"/><path d="M128 640 V716 M128 668 L98 694 M128 668 L158 694 M128 696 L110 716"/>
+<g transform="translate(216.64 492.16) scale(0.56)" stroke-width="14.29">
+<g id="serpiente"><path d="M88 420 L140 400 H364 V344 H108 V208 H364 V160 L304 140 L296 124 L344 88 H400 L420 114 L404 164 V248 H148 V304 H404 V440 H140 Z"/><path d="M296 124 H262 M262 124 L242 108 M262 124 L242 140"/>
+<circle cx="332" cy="116" r="6" fill="currentColor" stroke="none"/><path d="M376 102 l16 16 l-16 16 l-16 -16 Z" stroke="currentColor"/></g>
+</g></g>
+</g>
+</svg>

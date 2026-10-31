@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Ama sua, no ser ladrón: mano abierta con una barra de prohibición</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="ama-sua"><circle cx="256" cy="256" r="200"/><path d="M192 372 V342 L144 294 L160 278 L192 310 V180 H216 V276 H240 V164 H264 V276 H288 V176 H312 V276 H336 V200 H360 V372 Z"/><path d="M260 308 H292 V340 H260 Z"/><path d="M115 115 L397 397" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>

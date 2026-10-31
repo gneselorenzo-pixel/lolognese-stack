@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+<title>Puma sentado de perfil con el lomo y la cola en espiral escalonada</title>
+<g fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+<g id="puma"><path d="M312 168 V112 L328 80 L344 112 H368 L384 80 L400 112 L424 136 V160 L392 176 L360 176 L376 208 V424 H400 V440 H344 V328 H240 V424 H288 V440 H184 V264"/><circle cx="388" cy="132" r="4" fill="currentColor" stroke="none"/>
+<path d="M312 168 H280 V192 H248 V216 H216 V240 H184 V264 H72 V152 H136 V216 H104 V184" stroke="var(--accent, #FF7A00)"/></g>
+</g>
+</svg>
